@@ -1,0 +1,111 @@
+/* ============================================================
+   app/globals.css
+   Global styles — Tailwind base + terminal theme overrides
+   ============================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --color-bg: #000000;
+  --color-surface: #0a0a0a;
+  --color-border: #1c1c1c;
+  --color-accent: #34d399;   /* emerald-400 */
+  --color-accent-dim: rgba(52, 211, 153, 0.15);
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* ── Base resets ───────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: white;
+  font-family: var(--font-mono);
+  /* Subtle noise texture */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+}
+
+/* ── Scrollbars ────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* ── Selection ─────────────────────────────────────────────── */
+::selection {
+  background: rgba(52, 211, 153, 0.25);
+  color: #fff;
+}
+
+/* ── Utility: hide scrollbar visually but keep scroll ──────── */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Glow effects ──────────────────────────────────────────── */
+.glow-emerald {
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.15);
+}
+
+.glow-text-emerald {
+  text-shadow: 0 0 12px rgba(52, 211, 153, 0.4);
+}
+
+/* ── Terminal scanlines ────────────────────────────────────── */
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 4px
+  );
+}
+
+/* ── Numeric tabular figures ───────────────────────────────── */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Animations ────────────────────────────────────────────── */
+@keyframes pulse-emerald {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes scan-down {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(100vh); }
+}
+
+.animate-scan {
+  animation: scan-down 3s linear infinite;
+}

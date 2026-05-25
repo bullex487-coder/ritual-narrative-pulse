@@ -1,0 +1,46 @@
+<svg viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <!-- Black background -->
+  <rect width="900" height="900" fill="#000000"/>
+  
+  <!-- Ritual Logo - White Geometric Knot Pattern -->
+  <!-- Top diamond -->
+  <g fill="white">
+    <rect x="375" y="100" width="150" height="150" transform="rotate(45 450 175)"/>
+  </g>
+  
+  <!-- Upper middle diamonds (left and right) -->
+  <g fill="white">
+    <rect x="200" y="250" width="180" height="180" transform="rotate(45 290 340)"/>
+    <rect x="520" y="250" width="180" height="180" transform="rotate(45 610 340)"/>
+  </g>
+  
+  <!-- Inner squares -->
+  <g fill="black">
+    <rect x="245" y="295" width="90" height="90" transform="rotate(45 290 340)"/>
+    <rect x="565" y="295" width="90" height="90" transform="rotate(45 610 340)"/>
+  </g>
+  
+  <!-- Lower middle diamonds (left, center, right) -->
+  <g fill="white">
+    <rect x="125" y="425" width="200" height="200" transform="rotate(45 225 525)"/>
+    <rect x="350" y="425" width="200" height="200" transform="rotate(45 450 525)"/>
+    <rect x="575" y="425" width="200" height="200" transform="rotate(45 675 525)"/>
+  </g>
+  
+  <!-- Inner squares for lower diamonds -->
+  <g fill="black">
+    <rect x="195" y="495" width="100" height="100" transform="rotate(45 225 545)"/>
+    <rect x="420" y="495" width="100" height="100" transform="rotate(45 450 545)"/>
+    <rect x="645" y="495" width="100" height="100" transform="rotate(45 675 545)"/>
+  </g>
+  
+  <!-- Bottom diamond -->
+  <g fill="white">
+    <rect x="375" y="650" width="150" height="150" transform="rotate(45 450 725)"/>
+  </g>
+  
+  <!-- Inner bottom diamond -->
+  <g fill="black">
+    <rect x="412.5" y="687.5" width="75" height="75" transform="rotate(45 450 725)"/>
+  </g>
+</svg>
