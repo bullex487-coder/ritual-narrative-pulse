@@ -86,7 +86,7 @@ export default function Sidebar({
                       {item.analysis.token}
                     </span>
                     {item.onChain && (
-                      <Link2 className="w-3 h-3 text-blue-400" title="On-chain" />
+                      <Link2 className="w-3 h-3 text-blue-400"/>
                     )}
                   </div>
                   <span
